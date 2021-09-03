@@ -22,8 +22,11 @@ Insert into ContactsTable(FirstName,LastName,Address,City,State,ZipCode,PhoneNum
 ('Riya','D','Near temple','Chennai','Tamil Nadu','600005','7744112233','riyad@mail.com'),
 ('Neha','G','Opp mall','Kolkata','West Bangal','700073','7775553330','nehag@mail.com');
 
-/* edit contact */
+/* Edit contact */
 UPDATE ContactsTable set State='Maharashtra' where FirstName='Omkar' or FirstName='Suresh'
 
 /* Delete contact by name */
 Delete from ContactsTable where FirstName='Neha'
+
+/* Retrieve Person belonging to a City or State */
+SELECT * from ContactsTable where State='Maharashtra' or State='Delhi';
