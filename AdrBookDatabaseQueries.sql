@@ -21,3 +21,6 @@ Insert into ContactsTable(FirstName,LastName,Address,City,State,ZipCode,PhoneNum
 ('Suresh','K','above showroom','Swargate','MH','411042','8877995544','sureshk@mail.com'),
 ('Riya','D','Near temple','Chennai','Tamil Nadu','600005','7744112233','riyad@mail.com'),
 ('Neha','G','Opp mall','Kolkata','West Bangal','700073','7775553330','nehag@mail.com');
+
+/* edit contact */
+UPDATE ContactsTable set State='Maharashtra' where FirstName='Omkar' or FirstName='Suresh'
