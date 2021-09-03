@@ -24,3 +24,6 @@ Insert into ContactsTable(FirstName,LastName,Address,City,State,ZipCode,PhoneNum
 
 /* edit contact */
 UPDATE ContactsTable set State='Maharashtra' where FirstName='Omkar' or FirstName='Suresh'
+
+/* Delete contact by name */
+Delete from ContactsTable where FirstName='Neha'
