@@ -29,7 +29,7 @@ UPDATE ContactsTable set State='Maharashtra' where FirstName='Omkar' or FirstNam
 Delete from ContactsTable where FirstName='Neha'
 
 /* Retrieve Person belonging to a City or State */
-SELECT * from ContactsTable where State='Maharashtra' or State='Delhi';
+SELECT * from ContactsTable where State='Maharashtra' or City='Chennai';
 
 /* Count of address book by City and State */
 select City,COUNT(City) as countOfCity from ContactsTable group by City order by City;
@@ -45,3 +45,15 @@ SELECT * from ContactsTable
 SELECT * FROM ContactsTable WHERE City = 'Mumbai' ORDER BY FirstName ASC;	--ascending
 SELECT * FROM ContactsTable WHERE City = 'Mumbai' ORDER BY FirstName DESC;	--descending
 
+/* Ability to identify each Address Book with name and Type. */
+ALTER table ContactsTable ADD AdrBookName varchar(8);
+ALTER table ContactsTable ADD PersonType VARCHAR(16);
+
+UPDATE ContactsTable set AdrBookName='AB1' where Id=1 OR Id=6 OR Id=8
+UPDATE ContactsTable set AdrBookName='AB2' where Id=2 OR Id=3 
+UPDATE ContactsTable set AdrBookName='AB3' where Id=4 OR Id=7
+
+UPDATE ContactsTable set PersonType='Friends' where AdrBookName='AB1'
+UPDATE ContactsTable set PersonType='Family' where AdrBookName='AB2'
+UPDATE ContactsTable set PersonType='Profession' where AdrBookName='AB3'
+SELECT * FROM ContactsTable
