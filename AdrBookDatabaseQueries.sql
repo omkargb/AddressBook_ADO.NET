@@ -71,3 +71,6 @@ insert into PersonCategory(PersonId,PersonType) values (1,'Family'),(2,'Friend')
 select * from PersonCategory;
 ----- adding id 4 as friend and family
 insert into PersonCategory(PersonId,PersonType) values(1,'Profession'),(4,'Family');
+
+/* ER diagram and normalisation */
+Alter Table ContactsTable drop column PersonType
