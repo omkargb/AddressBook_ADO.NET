@@ -58,5 +58,16 @@ UPDATE ContactsTable set PersonType='Family' where AdrBookName='AB2'
 UPDATE ContactsTable set PersonType='Profession' where AdrBookName='AB3'
 SELECT * FROM ContactsTable
 
-/*Ability to get number of contact persons i.e. count by type */
+/* Ability to get number of contact persons i.e. count by type */
 SELECT PersonType,COUNT(PersonType) as count from ContactsTable group by PersonType
+
+/* Ability to add person to both Friend and Family */
+create table PersonCategory (
+	Id int identity(1,1) primary key,
+	PersonId int foreign key references ContactsTable(Id),
+	PersonType varchar(20) not null
+	)
+insert into PersonCategory(PersonId,PersonType) values (1,'Family'),(2,'Friend'),(3,'Family'),(4,'Friend'),(6,'Profession'),(7,'Profession'),(8,'Profession');
+select * from PersonCategory;
+----- adding id 4 as friend and family
+insert into PersonCategory(PersonId,PersonType) values(1,'Profession'),(4,'Family');
