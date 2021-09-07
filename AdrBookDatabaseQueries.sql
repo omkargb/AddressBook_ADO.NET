@@ -74,3 +74,9 @@ insert into PersonCategory(PersonId,PersonType) values(1,'Profession'),(4,'Famil
 
 /* ER diagram and normalisation */
 Alter Table ContactsTable drop column PersonType
+
+/* Test queries */
+SELECT * FROM ContactsTable WHERE City = 'Mumbai' ORDER BY FirstName ASC;	--ascending
+SELECT * from ContactsTable where State='Maharashtra' or City='Chennai';
+SELECT City,COUNT(City) as countOfCity from ContactsTable group by City order by City;
+SELECT PersonType,COUNT(PersonType) as count from ContactsTable group by PersonType
