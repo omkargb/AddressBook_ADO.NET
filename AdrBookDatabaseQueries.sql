@@ -74,6 +74,7 @@ insert into PersonCategory(PersonId,PersonType) values(1,'Profession'),(4,'Famil
 
 /* ER diagram and normalisation */
 Alter Table ContactsTable drop column PersonType
+select * from ContactsTable inner join PersonCategory on ContactsTable.Id=PersonCategory.PersonId
 
 /* Test queries */
 SELECT * FROM ContactsTable WHERE City = 'Mumbai' ORDER BY FirstName ASC;	--ascending
